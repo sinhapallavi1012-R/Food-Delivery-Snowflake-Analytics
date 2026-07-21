@@ -20,6 +20,8 @@ ORDER BY
 
 -- Validation Rule 2: ORDER_STATUS must be one of PLACED, PREPARING, OUT_FOR_DELIVERY, DELIVERED, or CANCELLED
 CREATE OR REPLACE VIEW VALIDATION_ORDER_STATUS AS
+-- Validation Rule 2: ORDER_STATUS must be one of
+-- Pending, Confirmed, Preparing, Ready, In Transit, Delivered, or Cancelled
 SELECT 
     ORDER_ID,
     CUSTOMER_ID,
@@ -28,7 +30,7 @@ SELECT
     'VALIDATION FAILED: Invalid ORDER_STATUS value' AS VALIDATION_MESSAGE,
     CURRENT_TIMESTAMP() AS VALIDATION_TIME
 FROM 
-    FOOD_ORDERS
+    RAW.FOOD_ORDERS
 WHERE 
     ORDER_STATUS NOT IN ('Pending', 'Confirmed', 'Preparing', 'Ready', 'In Transit', 'Delivered', 'Cancelled')
 ORDER BY 
