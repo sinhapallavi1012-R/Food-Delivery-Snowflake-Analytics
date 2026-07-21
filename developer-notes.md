@@ -1,0 +1,1 @@
+Assessment version Version_B. Uses different naming conventions and sample entities.

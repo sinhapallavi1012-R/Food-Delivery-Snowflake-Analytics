@@ -1,0 +1,1 @@
+Generate Snowflake-compatible SQL only. Use uppercase keywords.
